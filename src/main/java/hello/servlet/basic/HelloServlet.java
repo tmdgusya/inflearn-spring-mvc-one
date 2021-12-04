@@ -20,6 +20,11 @@ public class HelloServlet extends HttpServlet {
         System.out.println("request = " + request.toString());
         System.out.println("response = " + response.toString());
 
+        /*
+         * Request.getParameter 는 HTML Form 과 QueryParameter 도 꺼내옴
+         *
+         * application/x-www-form-urlencoded
+         */
         String username = request.getParameter("username");
         System.out.println("request parameter = " + username);
 
