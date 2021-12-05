@@ -10,16 +10,11 @@ import java.io.IOException;
 
 @WebServlet(name = "mvcMemberFormServlet", urlPatterns = "/servlet-mvc/members/new-form")
 public class MvcMemberFormServlet extends HttpServlet {
-
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         String viewPath = "/WEB-INF/views/new-form.jsp";
-
-        /**
-         * Dispatch To JSP
-         * Not Redirect
-         */
-        final RequestDispatcher requestDispatcher = req.getRequestDispatcher(viewPath);
-        requestDispatcher.forward(req, resp);
+        RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
+        dispatcher.forward(request, response);
     }
 }
